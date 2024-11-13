@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4e2ee7d7-5aa8-4269-8aa4-646ab2e641f0" name="Changes" comment="" />
+    <list default="true" id="4e2ee7d7-5aa8-4269-8aa4-646ab2e641f0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Comments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Posts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/SocialMedia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/User.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2oQzhs6olfx1ERjFKxKUd2i8P6X" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -21,11 +38,48 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.SocialMedia.executor": "Run",
+    "Application.User.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/lucia/Desktop/Master/Familiarizacion con entornos y lenguajes de programación/workspace-java/red-social"
   }
 }]]></component>
+  <component name="RunManager" selected="Application.SocialMedia">
+    <configuration name="SocialMedia" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.socialmedia.SocialMedia" />
+      <module name="red-social" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.socialmedia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="User" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.socialmedia.User" />
+      <module name="red-social" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.socialmedia.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SocialMedia" />
+        <item itemvalue="Application.User" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

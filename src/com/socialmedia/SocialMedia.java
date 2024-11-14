@@ -39,5 +39,18 @@ public class SocialMedia {
 
         System.out.println("\nPOSTS: " + "\n");
         user.postsList();
+        System.out.println("\n");
+
+
+        Comments comment1 = new Comments ("me encanta este videoo!!", 14-07-2024, "sebas7");
+        Comments comment2 = new Comments ("¡Avisa para la próxima!", 13-07-2024, "juanferrari");
+        Comments comment3 = new Comments ("los Sims, ¡qué recuerdos!", 14-10-2024, "lawiescudero");
+        Comments comment4 = new Comments ("al menos no llueve, jaja", 14-11-2024, "isidrouva");
+        Comments comment5 = new Comments ("en Amsterdam está así todo el año xd", 14-07-2024, "sebas7");
+        System.out.println("Comments to Post 1: \n" + comment1 + "\n" + comment2);
+        System.out.println("\n");
+        System.out.println("Comments to Post 2: \n" + comment3);
+        System.out.println("\n");
+        System.out.println("Comments to Post 3: \n" + comment4 + "\n" + comment5);
     }
 }

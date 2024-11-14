@@ -16,30 +16,6 @@ public class User {
         this.posts = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public List<String> getFriends() {
-        return friends;
-    }
-
-    public void setFriends(List<String> friends) {
-        this.friends = friends;
-    }
-
-    public List<String> getPosts() {
-        return posts;
-    }
-
-    public void setPosts(List<String> posts) {
-        this.posts = posts;
-    }
-
     public void addFriends(List<String>friendList, String friendName) {
         if (friendList.contains(friendName)) {
             System.out.println(friendName + " is already your friend.");
@@ -60,7 +36,6 @@ public class User {
             System.out.println(friendName + " could not be removed because is not in your list.");
         }
     }
-
 
     public void postsList() {
         List<String> post = new ArrayList<>();

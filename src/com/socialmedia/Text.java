@@ -1,14 +1,16 @@
 package com.socialmedia;
 
-class Text extends Posts {
-    private String textPost;
+import java.util.Date;
+import java.util.List;
 
-    public Text(String text) {
-        super();
-        this.textPost = text;
+class Text extends Posts {
+    public Text(User author, String content) {
+        super(author, content);
+        this.content = content;
     }
 
-    public String getTextPost() {
-        return textPost;
+    @Override
+    public void display() {
+        System.out.println("\nPost de texto de " + author.getName() + ": " + content);
     }
 }

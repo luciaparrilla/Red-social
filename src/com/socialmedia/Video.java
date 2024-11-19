@@ -1,27 +1,23 @@
 package com.socialmedia;
 
+import java.util.Date;
+import java.util.List;
+
 class Video extends Posts {
     private String title;
     private String quality;
-    private int duration;
+    private String duration;
 
-    public Video (String title, String quality, int duration) {
-        super();
+    public Video(User author, String title, String quality, String duration) {
+        super(author, "Posted: " + title);
         this.title = title;
         this.quality = quality;
         this.duration = duration;
     }
 
-    public String getTitle() {
-        return title;
+    @Override
+    public void display() {
+        System.out.println("\nPost de video de " + author.getName() + ": " + content);
+        System.out.println("Calidad: " + quality + ", Duración: " + duration);
     }
-
-    public String getQuality() {
-        return quality;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
 }

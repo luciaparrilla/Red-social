@@ -1,31 +1,26 @@
 package com.socialmedia;
 
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
-public class Comments {
-    private String comment;
-    private Date date;
-    private String user;
+class Comments {
+    private String text;
+    private User author;
+    private Posts post;
 
-    public Comments(String text, int date, String author) {
-        this.comment = text;
-        this.date = new Date();
-        this.user = author;
+    public Comments(User author, String text, Posts post) {
+        this.author = author;
+        this.text = text;
+        this.post = post;
     }
 
-    @Override
-    public String toString() {
-        return "· " + user + " in " + date + ": " + comment;
+    public void display() {
+        System.out.println("    " + author.getName() + " comenta: " + text);
     }
 
-     //public String getComment() {
-     //    return comment;
-     //}
-//
-     //public Date getDate() {
-     //    return date;
-     //}
-
-
-
+    public Posts getPost() {
+        return post;
+    }
 }
+

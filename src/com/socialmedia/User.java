@@ -65,7 +65,7 @@ class User {
     public void commentOnPost(Posts post, String commentText) {
         Comments comment = new Comments(this, commentText, post);
         post.addComment(comment);
-        System.out.println(name + " comentó en el post de " + post.getAuthor().getName());
+        //System.out.println(name + " comentó en el post de " + post.getAuthor().getName());
     }
 
     public List<Posts> getPosts() {

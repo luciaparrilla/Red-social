@@ -15,6 +15,18 @@ class Comments {
         this.post = post;
     }
 
+    public User getUser(){
+        return author;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public Posts getPosts(){
+        return post;
+    }
+
     public void display() {
         System.out.println("    " + author.getName() + " comenta: " + text);
     }

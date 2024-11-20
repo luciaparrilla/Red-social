@@ -8,9 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Comments.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Img.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Img.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Posts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/socialmedia/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/SocialMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Text.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/socialmedia/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Video.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Video.java" afterDir="false" />
     </list>
@@ -38,18 +36,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Posts.executor": "Run",
-    "Application.SocialMedia.executor": "Run",
-    "Application.Text.executor": "Run",
-    "Application.User.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/lucia/Desktop/Master/Familiarizacion con entornos y lenguajes de programación/workspace-java/red-social"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Posts.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SocialMedia.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Text.executor&quot;: &quot;Run&quot;,
+    &quot;Application.User.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/lucia/Desktop/Master/Familiarizacion con entornos y lenguajes de programación/workspace-java/red-social&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.SocialMedia">
     <configuration name="Posts" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.socialmedia.Posts" />

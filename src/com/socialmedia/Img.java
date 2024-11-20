@@ -10,7 +10,7 @@ class Img extends Posts {
 
 
     public Img(User author, String title, int width, int height) {
-        super(author, "Imagen: " + title);
+        super(author, "Title: " + title);
         this.title = title;
         this.width = width;
         this.height = height;
@@ -19,7 +19,6 @@ class Img extends Posts {
     @Override
     public void display() {
         System.out.println("\nPost de imagen de " + author.getName() + ": " + content);
-        System.out.println("Título: " + title);
         System.out.println("Dimensiones: " + width + "x" + height);
     }
 }

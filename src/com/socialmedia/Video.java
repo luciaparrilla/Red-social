@@ -9,7 +9,7 @@ class Video extends Posts {
     private String duration;
 
     public Video(User author, String title, String quality, String duration) {
-        super(author, "Posted: " + title);
+        super(author, "Title: " + title);
         this.title = title;
         this.quality = quality;
         this.duration = duration;

@@ -36,19 +36,21 @@ public class SocialMedia {
         user2.getPosts().get(0).addComment(comment2);
 
         Comments comment3 = new Comments(user1, "Qué recuerdos!!", user3.getPosts().get(0));
+        user3.getPosts().get(0).addComment(comment3);
+
 
         boolean running = true;
-
         do {
             System.out.println("\nMenú");
             System.out.println("1. Agregar un post");
             System.out.println("2. Ver publicaciones");
             System.out.println("3. Comentar en un post");
-            System.out.println("4. Ver publicaciones de tus amigos");
-            System.out.println("5. Ver lista de amigos");
-            System.out.println("6. Agregar amigo");
-            System.out.println("7. Eliminar amigo");
-            System.out.println("8. Salir");
+            System.out.println("4. Ver posts de tus amigos");
+            System.out.println("5. Ver comentarios de un post");
+            System.out.println("6. Ver lista de amigos");
+            System.out.println("7. Agregar amigo");
+            System.out.println("8. Eliminar amigo");
+            System.out.println("9. Salir");
             System.out.print("¿Qué quieres hacer?: ");
 
             int option = scanner.nextInt();
@@ -114,21 +116,51 @@ public class SocialMedia {
                        user1.commentOnPost(postToComment, commentText);
                    } else {
                        System.out.println("Este usuario no tiene publicaciones.");
-                }
+                   }
                     break;
 
                 case 4:
                     user1.displayFriendsPosts();
                     break;
 
+
                 case 5:
+                    System.out.println("\nVer comentarios de un post:");
+                    System.out.println("(1) Lucia9 - De vacaciones en Jamaica");
+                    System.out.println("(2) JuanFerrari - Día nublado :/");
+                    System.out.println("(3) LawiEscudero - Jugando a los Sims");
+                    System.out.print("Selecciona un post para ver los comentarios: ");
+                    int postUserChoice = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Posts postToViewComments = null;
+
+                    if (postUserChoice == 1) {
+                        postToViewComments = user1.getPosts().get(0);
+                    } else if (postUserChoice == 2) {
+                        postToViewComments = user2.getPosts().get(0);
+                    } else if (postUserChoice == 3) {
+                        postToViewComments = user3.getPosts().get(0);
+                    }
+
+                    if (postToViewComments != null) {
+                        System.out.println("Comentarios para el post: " + postToViewComments.getContent());
+                        for (Comments comment : postToViewComments.getComments()) {
+                            System.out.println(comment.getUser().getName() + ": " + comment.getText());
+                        }
+                    } else {
+                        System.out.println("Post no encontrado.");
+                    }
+                    break;
+
+                case 6:
                     System.out.println("\nLista de amigos de " + user1.getName() + ":");
                     for (User friend : user1.getFriends()) {
                         System.out.println(friend.getName());
                     }
                     break;
 
-                case 6:
+                case 7:
                     System.out.print("Ingresa el nombre del usuario que quieres añadirr como amigo: ");
                     String friendName = scanner.nextLine();
                     if (friendName.equalsIgnoreCase("JuanFerrari")) {
@@ -140,7 +172,7 @@ public class SocialMedia {
                     }
                     break;
 
-                case 7:
+                case 8:
                     System.out.print("Ingresa el nombre del amigo que quieres eliminar: ");
                     String friendToRemove = scanner.nextLine();
                     if (friendToRemove.equalsIgnoreCase("JuanFerrari")) {
@@ -152,7 +184,7 @@ public class SocialMedia {
                     }
                     break;
 
-                case 8:
+                case 9:
                     //running = false;
                     System.out.println("Has cerrado sesión.");
                     break;

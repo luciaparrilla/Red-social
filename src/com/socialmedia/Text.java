@@ -5,7 +5,7 @@ import java.util.List;
 
 class Text extends Posts {
     public Text(User author, String content) {
-        super(author, content);
+        super(author, "Title: ");
         this.content = content;
     }
 

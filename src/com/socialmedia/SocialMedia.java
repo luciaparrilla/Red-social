@@ -43,10 +43,10 @@ public class SocialMedia {
         do {
             System.out.println("\nMenú");
             System.out.println("1. Agregar un post");
-            System.out.println("2. Ver publicaciones");
+            System.out.println("2. Ver posts");
             System.out.println("3. Comentar en un post");
-            System.out.println("4. Ver posts de tus amigos");
-            System.out.println("5. Ver comentarios de un post");
+            System.out.println("4. Ver comentarios de un post");
+            System.out.println("5. Eliminar un comentario");
             System.out.println("6. Ver lista de amigos");
             System.out.println("7. Agregar amigo");
             System.out.println("8. Eliminar amigo");
@@ -73,9 +73,9 @@ public class SocialMedia {
 
                 case 2:
                     System.out.println("\nVer publicaciones de:");
-                    System.out.println("1. Lucia9");
-                    System.out.println("2. JuanFerrari");
-                    System.out.println("3. LawiEscudero");
+                    System.out.println("(1) Lucia9");
+                    System.out.println("(2) JuanFerrari");
+                    System.out.println("(3) LawiEscudero");
                     System.out.print("Selecciona una opción: ");
                     int userChoice = scanner.nextInt();
                     scanner.nextLine();
@@ -120,11 +120,6 @@ public class SocialMedia {
                     break;
 
                 case 4:
-                    user1.displayFriendsPosts();
-                    break;
-
-
-                case 5:
                     System.out.println("\nVer comentarios de un post:");
                     System.out.println("(1) Lucia9 - De vacaciones en Jamaica");
                     System.out.println("(2) JuanFerrari - Día nublado :/");
@@ -153,6 +148,49 @@ public class SocialMedia {
                     }
                     break;
 
+                case 5:
+                    System.out.println("\nPosts:");
+                    System.out.println("(1) Lucia9 - De vacaciones en Jamaica");
+                    System.out.println("(2) JuanFerrari - Día nublado :/");
+                    System.out.println("(3) LawiEscudero - Jugando a los Sims");
+                    System.out.print("Selecciona un post: ");
+                    int postToDeleteCommentChoice = scanner.nextInt();
+                    scanner.nextLine();
+
+                    Posts postToDeleteComment = null;
+                    Comments commentToDelete = null;
+
+                    if (postToDeleteCommentChoice == 1) {
+                        postToDeleteComment = user1.getPosts().get(0);
+                    } else if (postToDeleteCommentChoice == 2) {
+                        postToDeleteComment = user2.getPosts().get(0);
+                    } else if (postToDeleteCommentChoice == 3) {
+                        postToDeleteComment = user3.getPosts().get(0);
+                    }
+
+                    if (postToDeleteComment != null) {
+                        if (!postToDeleteComment.getComments().isEmpty()) {
+                            System.out.println("Comentarios:");
+                            for (int i = 0; i < postToDeleteComment.getComments().size(); i++) {
+                                Comments c = postToDeleteComment.getComments().get(i);
+                                System.out.println(i + 1 + ". " + c.getUser().getName() + ": " + c.getText());
+                            }
+                            System.out.print("Selecciona el número del comentario a eliminar: ");
+                            int commentChoice = scanner.nextInt();
+                            scanner.nextLine();
+                            if (commentChoice > 0 && commentChoice <= postToDeleteComment.getComments().size()) {
+                                commentToDelete = postToDeleteComment.getComments().get(commentChoice - 1);
+                                postToDeleteComment.removeComment(commentToDelete);
+                                System.out.println("Comentario eliminado.");
+                            } else {
+                                System.out.println("Número de comentario no válido.");
+                            }
+                        } else {
+                            System.out.println("No hay comentarios para eliminar.");
+                        }
+                    }
+                    break;
+
                 case 6:
                     System.out.println("\nLista de amigos de " + user1.getName() + ":");
                     for (User friend : user1.getFriends()) {
@@ -161,7 +199,7 @@ public class SocialMedia {
                     break;
 
                 case 7:
-                    System.out.print("Ingresa el nombre del usuario que quieres añadirr como amigo: ");
+                    System.out.print("Ingresa el nombre del usuario que quieres añadir como amigo: ");
                     String friendName = scanner.nextLine();
                     if (friendName.equalsIgnoreCase("JuanFerrari")) {
                         user1.addFriend(user2);

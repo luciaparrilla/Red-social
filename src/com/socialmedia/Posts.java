@@ -23,6 +23,10 @@ class Posts {
         comments.add(comment);
     }
 
+    public void removeComment(Comments comment) {
+        comments.remove(comment);
+    }
+
     public void display() {
         System.out.println("\nPost de " + author.getName() + ": " + content);
         System.out.println("Comentarios:");

@@ -16,6 +16,7 @@ class Img extends Posts {
         this.height = height;
     }
 
+
     @Override
     public void display() {
         System.out.println("\nPost de imagen de " + author.getName() + ": " + content);

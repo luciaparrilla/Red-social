@@ -31,7 +31,7 @@ class Posts {
         System.out.println("\nPost de " + author.getName() + ": " + content);
         System.out.println("Comentarios:");
         if (comments.isEmpty()) {
-            System.out.println("    No hay comentarios.");
+            System.out.println("No hay comentarios.");
         } else {
             for (Comments comment : comments) {
                 comment.display();

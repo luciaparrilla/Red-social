@@ -6,9 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4e2ee7d7-5aa8-4269-8aa4-646ab2e641f0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Comments.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Img.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Img.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Posts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Posts.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/socialmedia/SocialMedia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/SocialMedia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/Text.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/Text.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/socialmedia/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/socialmedia/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +39,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.Posts.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SocialMedia (1).executor&quot;: &quot;Run&quot;,
     &quot;Application.SocialMedia.executor&quot;: &quot;Run&quot;,
     &quot;Application.Text.executor&quot;: &quot;Run&quot;,
     &quot;Application.User.executor&quot;: &quot;Run&quot;,
@@ -102,9 +105,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.SocialMedia" />
+        <item itemvalue="Application.User" />
         <item itemvalue="Application.Posts" />
         <item itemvalue="Application.Text" />
-        <item itemvalue="Application.User" />
       </list>
     </recent_temporary>
   </component>

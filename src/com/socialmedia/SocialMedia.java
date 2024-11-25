@@ -7,36 +7,32 @@ import java.util.Scanner;
 public class SocialMedia {
     public static void main(String[] args) {
 
-// //buscar herramientas en clase Utils para listar cosas y demás - showAndSelectFromList o algo así\\\\\\\\\
-
-////////menú con submenús (posts+publicar, listar, etc; comentarios+listar, publicar, eliminar, etc.)
-
+        //poder ver los amigos que añado por pantalla en el case de ver amigos
         Scanner scanner = new Scanner(System.in);
 
         User user1 = new User("Lucia9");
         User user2 = new User("JuanFerrari");
         User user3 = new User("LawiEscudero");
 
+        System.out.println("Para ti: ");
+
+        user2.createVideoPost(user2, "De vacaciones en Balboa", "HD", "1:03 minutos.");
+        user2.createTextPost(user2, "No me sale el acorde de B7");
+        user3.createImgPost(user3, "Subiendo el puerto de Manzanal", 800, 500);
+        user1.createTextPost(user1, "Todo el día escuchando a Connie Converse :')");
+        user2.createTextPost(user2, "He vuelto a verme Lilya 4-Ever...");
+        user3.createTextPost(user3, "Jugando a los Sims");
+        user1.createImgPost(user1, "Así se ve Boeza desde mi terraza (H)", 1000, 800);
+        user2.createImgPost(user2, "He encontrado esta foto antigua de Paul McCartney", 500, 300);
+        user3.createImgPost(user3, "Qué gracia me hace este meme :')", 800, 500);
+        user1.createVideoPost(user1, "De vacaciones en Jamaica", "HD", "1:3 minutos");
+        user2.createVideoPost(user2, "Recitando La chorrimanguera xd", "240pp", "2:54 minutos");
+        user3.createVideoPost(user3, "Persecución policial en Bembibre", "HD", "3 minutos");
+
 
         System.out.println("\nNotificaciones: " + "\n");
         user1.addFriend(user2);
-        user2.addFriend(user3);
-
-        System.out.println("\nPara ti: ");
-
-        user1.createPost("De vacaciones en Jamaica", "video");
-        user2.createPost("Día nublado :/", "imagen");
-        user3.createPost("Jugando a los Sims", "texto");
-
-
-        Comments comment1 = new Comments(user2, "¡Qué envidia!", user1.getPosts().get(0));
-        user1.getPosts().get(0).addComment(comment1);
-
-        Comments comment2 = new Comments(user3, "Por aquí llueve, Juan...", user2.getPosts().get(0));
-        user2.getPosts().get(0).addComment(comment2);
-
-        Comments comment3 = new Comments(user1, "Qué recuerdos!!", user3.getPosts().get(0));
-        user3.getPosts().get(0).addComment(comment3);
+        //user2.addFriend(user3);
 
 
         boolean running = true;
@@ -60,12 +56,32 @@ public class SocialMedia {
                 case 1:
                     System.out.print("Indica el tipo de post (texto, imagen, video): ");
                     String postType = scanner.nextLine();
-                    System.out.print("Escribe el título del post: ");
-                    String content = scanner.nextLine();
 
-                    if (postType.equalsIgnoreCase("texto") || postType.equalsIgnoreCase("imagen") || postType.equalsIgnoreCase("video")) {
-                        user1.createPost(content, postType);
+
+                    if (postType.equalsIgnoreCase("texto")) {
+                        System.out.println("Escribe tu post: ");
+                        String text = scanner.nextLine();
+                        user1.createTextPost(user1, text);
                         System.out.println("Post creado correctamente.");
+                    } else if (postType.equalsIgnoreCase("imagen")) {
+                        System.out.println("Introduce el título de la imagen: ");
+                        String imgTitle = scanner.nextLine();
+                        System.out.print("Introduce la altura de la imagen: ");
+                        int height = scanner.nextInt();
+                        System.out.print("Introduce el ancho de la imagen: ");
+                        int width = scanner.nextInt();
+                        scanner.nextLine();
+                        user1.createImgPost(user1, imgTitle, height, width);
+                        System.out.println("Post creado correctamente.");
+                    } else if (postType.equalsIgnoreCase("video")) {
+                        System.out.println("Introduce el título del vídeo: ");
+                        String videoTitle = scanner.nextLine();
+                        System.out.print("Introduce la calidad del vídeo: ");
+                        String quality = scanner.nextLine();
+                        System.out.print("Introduce la duración del vídeo: ");
+                        String duration = scanner.nextLine();
+                        user1.createVideoPost(user1, videoTitle, quality, duration);
+                        System.out.println("Post creado correctamente");
                     } else {
                         System.out.println("Tipo de post no válido.");
                     }
@@ -93,49 +109,122 @@ public class SocialMedia {
                     break;
 
                 case 3:
-                    System.out.println("\nComentar en un post de:");
-                    System.out.println("Lucia9 (1)");
-                    System.out.println("JuanFerrari (2)");
-                    System.out.println("LawiEscudero (3)");
+                    System.out.println("\nSelecciona el usuario para comentar:");
+                    System.out.println("(1) Lucia9");
+                    System.out.println("(2) JuanFerrari");
+                    System.out.println("(3) LawiEscudero");
                     System.out.print("Selecciona una opción: ");
                     int commentUserChoice = scanner.nextInt();
                     scanner.nextLine();
 
-                    System.out.print("Escribe tu comentario: ");
-                    String commentText = scanner.nextLine();
+                    Posts postToComment = null;
+                    if (commentUserChoice == 1) {
+                        System.out.println("Selecciona un post de " + user1.getName() + ":");
+                        for (int i = 0; i < user1.getPosts().size(); i++) {
+                            System.out.println("(" + (i + 1) + ") " + user1.getPosts().get(i).getContent());
+                        }
+                        System.out.print("Selecciona el número del post: ");
+                        int postChoice = scanner.nextInt() - 1;
+                        scanner.nextLine();
 
+                        if (postChoice >= 0 && postChoice < user1.getPosts().size()) {
+                            postToComment = user1.getPosts().get(postChoice);
+                        } else {
+                            System.out.println("Post no válido.");
+                        }
+                    } else if (commentUserChoice == 2) {
+                        System.out.println("Selecciona un post de " + user2.getName() + ":");
+                        for (int i = 0; i < user2.getPosts().size(); i++) {
+                            System.out.println("(" + (i + 1) + ") " + user2.getPosts().get(i).getContent());
+                        }
+                        System.out.print("Selecciona el número del post: ");
+                        int postChoice = scanner.nextInt() - 1;
+                        scanner.nextLine();
 
-                   if (commentUserChoice == 1 && !user1.getPosts().isEmpty()) {
-                       Posts postToComment = user1.getPosts().get(0);
-                       user2.commentOnPost(postToComment, commentText);
-                   } else if (commentUserChoice == 2 && !user2.getPosts().isEmpty()) {
-                       Posts postToComment = user2.getPosts().get(0);
-                       user1.commentOnPost(postToComment, commentText);
-                   } else if (commentUserChoice == 3 && !user3.getPosts().isEmpty()) {
-                       Posts postToComment = user3.getPosts().get(0);
-                       user1.commentOnPost(postToComment, commentText);
-                   } else {
-                       System.out.println("Este usuario no tiene publicaciones.");
-                   }
+                        if (postChoice >= 0 && postChoice < user2.getPosts().size()) {
+                            postToComment = user2.getPosts().get(postChoice);
+                        } else {
+                            System.out.println("Post no válido.");
+                        }
+                    } else if (commentUserChoice == 3) {
+                        System.out.println("Selecciona un post de " + user3.getName() + ":");
+                        for (int i = 0; i < user3.getPosts().size(); i++) {
+                            System.out.println("(" + (i + 1) + ") " + user3.getPosts().get(i).getContent());
+                        }
+                        System.out.print("Selecciona el número del post: ");
+                        int postChoice = scanner.nextInt() - 1;
+                        scanner.nextLine();
+
+                        if (postChoice >= 0 && postChoice < user3.getPosts().size()) {
+                            postToComment = user3.getPosts().get(postChoice);
+                        } else {
+                            System.out.println("Post no válido.");
+                        }
+                    }
+
+                    if (postToComment != null) {
+                        System.out.println("Escribe tu comentario:");
+                        String commentText = scanner.nextLine();
+                        Comments comment = new Comments(user1, commentText, postToComment);
+                        postToComment.addComment(comment);
+                        System.out.println("Comentario agregado.");
+                    } else {
+                        System.out.println("No se ha podido comentar en el post.");
+                    }
                     break;
 
                 case 4:
-                    System.out.println("\nVer comentarios de un post:");
-                    System.out.println("(1) Lucia9 - De vacaciones en Jamaica");
-                    System.out.println("(2) JuanFerrari - Día nublado :/");
-                    System.out.println("(3) LawiEscudero - Jugando a los Sims");
-                    System.out.print("Selecciona un post para ver los comentarios: ");
-                    int postUserChoice = scanner.nextInt();
+                    System.out.println("\nSelecciona el usuario para ver los comentarios:");
+                    System.out.println("(1) Lucia9");
+                    System.out.println("(2) JuanFerrari");
+                    System.out.println("(3) LawiEscudero");
+                    System.out.print("Selecciona una opción: ");
+                    int userChoiceForComments = scanner.nextInt();
                     scanner.nextLine();
 
                     Posts postToViewComments = null;
+                    if (userChoiceForComments == 1) {
+                        System.out.println("Selecciona un post de " + user1.getName() + ":");
+                        for (int i = 0; i < user1.getPosts().size(); i++) {
+                            System.out.println("(" + (i + 1) + ") " + user1.getPosts().get(i).getContent());
+                        }
+                        System.out.print("Selecciona el número del post: ");
+                        int postChoice = scanner.nextInt() - 1;
+                        scanner.nextLine();
 
-                    if (postUserChoice == 1) {
-                        postToViewComments = user1.getPosts().get(0);
-                    } else if (postUserChoice == 2) {
-                        postToViewComments = user2.getPosts().get(0);
-                    } else if (postUserChoice == 3) {
-                        postToViewComments = user3.getPosts().get(0);
+                        if (postChoice >= 0 && postChoice < user1.getPosts().size()) {
+                            postToViewComments = user1.getPosts().get(postChoice);
+                        } else {
+                            System.out.println("Post no válido.");
+                        }
+                    } else if (userChoiceForComments == 2) {
+                        System.out.println("Selecciona un post de " + user2.getName() + ":");
+                        for (int i = 0; i < user2.getPosts().size(); i++) {
+                            System.out.println("(" + (i + 1) + ") " + user2.getPosts().get(i).getContent());
+                        }
+                        System.out.print("Selecciona el número del post: ");
+                        int postChoice = scanner.nextInt() - 1;
+                        scanner.nextLine();
+
+                        if (postChoice >= 0 && postChoice < user2.getPosts().size()) {
+                            postToViewComments = user2.getPosts().get(postChoice);
+                        } else {
+                            System.out.println("Post no válido.");
+                        }
+                    } else if (userChoiceForComments == 3) {
+                        System.out.println("Selecciona un post de " + user3.getName() + ":");
+                        for (int i = 0; i < user3.getPosts().size(); i++) {
+                            System.out.println("(" + (i + 1) + ") " + user3.getPosts().get(i).getContent());
+                        }
+                        System.out.print("Selecciona el número del post: ");
+                        int postChoice = scanner.nextInt() - 1;
+                        scanner.nextLine();
+
+                        if (postChoice >= 0 && postChoice < user3.getPosts().size()) {
+                            postToViewComments = user3.getPosts().get(postChoice);
+                        } else {
+                            System.out.println("Post no válido.");
+                        }
                     }
 
                     if (postToViewComments != null) {
@@ -206,7 +295,7 @@ public class SocialMedia {
                     } else if (friendName.equalsIgnoreCase("LawiEscudero")) {
                         user1.addFriend(user3);
                     } else {
-                        System.out.println("Usuario no encontrado.");
+                        System.out.println(friendName + " ahora es tu amigo.");
                     }
                     break;
 
@@ -232,7 +321,6 @@ public class SocialMedia {
                     break;
             }
         } while (running);
-
         scanner.close();
     }
 }
